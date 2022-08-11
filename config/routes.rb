@@ -2,6 +2,25 @@ Rails.application.routes.draw do
 
 
 
+  # Routes for the Request resource:
+
+  # CREATE
+  post("/insert_request", { :controller => "requests", :action => "create" })
+          
+  # READ
+  get("/requests", { :controller => "requests", :action => "index" })
+  
+  get("/requests/:path_id", { :controller => "requests", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_request/:path_id", { :controller => "requests", :action => "update" })
+  
+  # DELETE
+  get("/delete_request/:path_id", { :controller => "requests", :action => "destroy" })
+
+  #------------------------------
+
   # Routes for the User account:
 
   # SIGN UP FORM

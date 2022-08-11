@@ -10,7 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_11_170742) do
+ActiveRecord::Schema.define(version: 2022_08_11_171700) do
+
+  create_table "requests", force: :cascade do |t|
+    t.date "request_date"
+    t.time "request_start_time"
+    t.time "request_end_time"
+    t.string "request_location"
+    t.string "request_street_address"
+    t.string "request_city"
+    t.string "request_state"
+    t.string "request_country"
+    t.integer "request_postal_code"
+    t.string "request_parking_location"
+    t.string "request_meeting_location"
+    t.boolean "request_pet"
+    t.string "request_gender_preference"
+    t.string "request_comments"
+    t.float "request_amount"
+    t.string "request_status"
+    t.integer "requestor_id"
+    t.integer "provider_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email"

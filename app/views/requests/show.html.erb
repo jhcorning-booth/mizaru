@@ -1,0 +1,326 @@
+<div>
+  <div>
+    <h1>
+      Request #<%= @the_request.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/requests">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_request/<%= @the_request.id %>">
+          Delete request
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Request date
+      </dt>
+      <dd>
+        <%= @the_request.request_date %>
+      </dd>
+
+      <dt>
+        Request start time
+      </dt>
+      <dd>
+        <%= @the_request.request_start_time %>
+      </dd>
+
+      <dt>
+        Request end time
+      </dt>
+      <dd>
+        <%= @the_request.request_end_time %>
+      </dd>
+
+      <dt>
+        Request location
+      </dt>
+      <dd>
+        <%= @the_request.request_location %>
+      </dd>
+
+      <dt>
+        Request street address
+      </dt>
+      <dd>
+        <%= @the_request.request_street_address %>
+      </dd>
+
+      <dt>
+        Request city
+      </dt>
+      <dd>
+        <%= @the_request.request_city %>
+      </dd>
+
+      <dt>
+        Request state
+      </dt>
+      <dd>
+        <%= @the_request.request_state %>
+      </dd>
+
+      <dt>
+        Request country
+      </dt>
+      <dd>
+        <%= @the_request.request_country %>
+      </dd>
+
+      <dt>
+        Request postal code
+      </dt>
+      <dd>
+        <%= @the_request.request_postal_code %>
+      </dd>
+
+      <dt>
+        Request parking location
+      </dt>
+      <dd>
+        <%= @the_request.request_parking_location %>
+      </dd>
+
+      <dt>
+        Request meeting location
+      </dt>
+      <dd>
+        <%= @the_request.request_meeting_location %>
+      </dd>
+
+      <dt>
+        Request pet
+      </dt>
+      <dd>
+        <%= @the_request.request_pet %>
+      </dd>
+
+      <dt>
+        Request gender preference
+      </dt>
+      <dd>
+        <%= @the_request.request_gender_preference %>
+      </dd>
+
+      <dt>
+        Request comments
+      </dt>
+      <dd>
+        <%= @the_request.request_comments %>
+      </dd>
+
+      <dt>
+        Request amount
+      </dt>
+      <dd>
+        <%= @the_request.request_amount %>
+      </dd>
+
+      <dt>
+        Request status
+      </dt>
+      <dd>
+        <%= @the_request.request_status %>
+      </dd>
+
+      <dt>
+        Requestor
+      </dt>
+      <dd>
+        <%= @the_request.requestor_id %>
+      </dd>
+
+      <dt>
+        Provider
+      </dt>
+      <dd>
+        <%= @the_request.provider_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_request.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_request.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit request
+    </h2>
+
+    <form action="/modify_request/<%= @the_request.id %>"  method="post" >
+      <div>
+        <label for="request_date_box">
+          Request date
+        </label>
+
+        <input type="date" id="request_date_box" name="query_request_date" value="<%= @the_request.request_date %>">
+      </div>
+
+      <div>
+        <label for="request_start_time_box">
+          Request start time
+        </label>
+
+        <input type="time" id="request_start_time_box" name="query_request_start_time" value="<%= @the_request.request_start_time %>">
+      </div>
+
+      <div>
+        <label for="request_end_time_box">
+          Request end time
+        </label>
+
+        <input type="time" id="request_end_time_box" name="query_request_end_time" value="<%= @the_request.request_end_time %>">
+      </div>
+
+      <div>
+        <label for="request_location_box">
+          Request location
+        </label>
+
+        <input type="text" id="request_location_box" name="query_request_location" value="<%= @the_request.request_location %>">
+      </div>
+
+      <div>
+        <label for="request_street_address_box">
+          Request street address
+        </label>
+
+        <input type="text" id="request_street_address_box" name="query_request_street_address" value="<%= @the_request.request_street_address %>">
+      </div>
+
+      <div>
+        <label for="request_city_box">
+          Request city
+        </label>
+
+        <input type="text" id="request_city_box" name="query_request_city" value="<%= @the_request.request_city %>">
+      </div>
+
+      <div>
+        <label for="request_state_box">
+          Request state
+        </label>
+
+        <input type="text" id="request_state_box" name="query_request_state" value="<%= @the_request.request_state %>">
+      </div>
+
+      <div>
+        <label for="request_country_box">
+          Request country
+        </label>
+
+        <input type="text" id="request_country_box" name="query_request_country" value="<%= @the_request.request_country %>">
+      </div>
+
+      <div>
+        <label for="request_postal_code_box">
+          Request postal code
+        </label>
+
+        <input type="text" id="request_postal_code_box" name="query_request_postal_code" value="<%= @the_request.request_postal_code %>">
+      </div>
+
+      <div>
+        <label for="request_parking_location_box">
+          Request parking location
+        </label>
+
+        <input type="text" id="request_parking_location_box" name="query_request_parking_location" value="<%= @the_request.request_parking_location %>">
+      </div>
+
+      <div>
+        <label for="request_meeting_location_box">
+          Request meeting location
+        </label>
+
+        <input type="text" id="request_meeting_location_box" name="query_request_meeting_location" value="<%= @the_request.request_meeting_location %>">
+      </div>
+
+      <div>
+        <input type="checkbox" id="request_pet_box" name="query_request_pet" value="1" <%= "checked" if @the_request.request_pet %>>
+
+        <label for="request_pet_box">
+            Request pet
+        </label>
+      </div>
+
+      <div>
+        <label for="request_gender_preference_box">
+          Request gender preference
+        </label>
+
+        <input type="text" id="request_gender_preference_box" name="query_request_gender_preference" value="<%= @the_request.request_gender_preference %>">
+      </div>
+
+      <div>
+        <label for="request_comments_box">
+          Request comments
+        </label>
+
+        <input type="text" id="request_comments_box" name="query_request_comments" value="<%= @the_request.request_comments %>">
+      </div>
+
+      <div>
+        <label for="request_amount_box">
+          Request amount
+        </label>
+
+        <input type="text" id="request_amount_box" name="query_request_amount" value="<%= @the_request.request_amount %>">
+      </div>
+
+      <div>
+        <label for="request_status_box">
+          Request status
+        </label>
+
+        <input type="text" id="request_status_box" name="query_request_status" value="<%= @the_request.request_status %>">
+      </div>
+
+      <div>
+        <label for="requestor_id_box">
+          Requestor
+        </label>
+
+        <input type="text" id="requestor_id_box" name="query_requestor_id" value="<%= @the_request.requestor_id %>">
+      </div>
+
+      <div>
+        <label for="provider_id_box">
+          Provider
+        </label>
+
+        <input type="text" id="provider_id_box" name="query_provider_id" value="<%= @the_request.provider_id %>">
+      </div>
+
+      <button>
+        Update request
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
