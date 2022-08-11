@@ -10,6 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2022_08_11_170742) do
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
+    t.string "user_type"
+    t.string "user_profile_picture"
+    t.string "user_first_name"
+    t.string "user_last_name"
+    t.string "user_street_address"
+    t.string "user_city"
+    t.string "user_state"
+    t.string "user_country"
+    t.integer "user_postal_code"
+    t.string "user_race"
+    t.string "user_comments"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
 end

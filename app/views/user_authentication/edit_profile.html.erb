@@ -1,0 +1,72 @@
+<div >
+  <h5>
+    Edit User Account
+  </h5>
+
+  <div>
+    <form action="/modify_user" method="post">
+      <div>
+        <label for="email_box">Email</label>
+        <input id="email_box" name="query_email" value="<%= @current_user.email %>">
+      </div>
+      <div>
+        <label for="user_type_box">User type</label>
+        <input id="user_type_box" name="query_user_type" value="<%= @current_user.user_type %>">
+      </div>
+      <div>
+        <label for="user_profile_picture_box">User profile picture</label>
+        <input id="user_profile_picture_box" name="query_user_profile_picture" value="<%= @current_user.user_profile_picture %>">
+      </div>
+      <div>
+        <label for="user_first_name_box">User first name</label>
+        <input id="user_first_name_box" name="query_user_first_name" value="<%= @current_user.user_first_name %>">
+      </div>
+      <div>
+        <label for="user_last_name_box">User last name</label>
+        <input id="user_last_name_box" name="query_user_last_name" value="<%= @current_user.user_last_name %>">
+      </div>
+      <div>
+        <label for="user_street_address_box">User street address</label>
+        <input id="user_street_address_box" name="query_user_street_address" value="<%= @current_user.user_street_address %>">
+      </div>
+      <div>
+        <label for="user_city_box">User city</label>
+        <input id="user_city_box" name="query_user_city" value="<%= @current_user.user_city %>">
+      </div>
+      <div>
+        <label for="user_state_box">User state</label>
+        <input id="user_state_box" name="query_user_state" value="<%= @current_user.user_state %>">
+      </div>
+      <div>
+        <label for="user_country_box">User country</label>
+        <input id="user_country_box" name="query_user_country" value="<%= @current_user.user_country %>">
+      </div>
+      <div>
+        <label for="user_postal_code_box">User postal code</label>
+        <input id="user_postal_code_box" name="query_user_postal_code" value="<%= @current_user.user_postal_code %>">
+      </div>
+      <div>
+        <label for="user_race_box">User race</label>
+        <input id="user_race_box" name="query_user_race" value="<%= @current_user.user_race %>">
+      </div>
+      <div>
+        <label for="user_comments_box">User comments</label>
+        <input id="user_comments_box" name="query_user_comments" value="<%= @current_user.user_comments %>">
+      </div>
+
+      <div>
+        <label for="password_box">Password</label>
+        <input id="password_box" name="query_password" placeholder="Choose a password..." type="password">
+      </div>
+    
+      <div>
+        <label for="password_confirmation_box">Password Confirmation</label>
+        <input id="password_confirmation_box" name="query_password_confirmation" placeholder="Confirm your password..." type="password">
+      </div>
+
+      <button>
+        Update account
+      </button>
+    </form>
+  </div>
+</div>
