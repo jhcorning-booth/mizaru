@@ -17,15 +17,28 @@
 
   <body>
     <ul>
-      <li>
-        <a href="/requests">request</a>
-      </li>
+
+      <% if session.fetch(:user_id) == nil %>
       <li>
         <a href="/user_sign_up">Sign up</a>
       </li>
       <li>
         <a href="/user_sign_in">Sign in</a>
       </li>
+
+      <% else %>
+      <li>
+        <a href="/requests">Create a new request</a>
+      </li>
+      <li>
+        <a href="/edit_user_profile">Edit my profile</a>
+      </li>
+       <li>
+        <a href="/user_sign_out">Sign out</a>
+      </li>
+
+      <% end %>
+
     </ul>
     <%= yield %>
   </body>

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get("/", { :controller => "requests", :action => "index" })
+
   # Routes for the Request resource:
 
   # CREATE
@@ -32,7 +34,7 @@ Rails.application.routes.draw do
   post("/modify_user", { :controller => "user_authentication", :action => "update" })
   
   # DELETE RECORD
-  get("/cancel_user_account", { :controller => "user_authentication", :action => "destroy" })
+  # get("/cancel_user_account", { :controller => "user_authentication", :action => "destroy" })
 
   # ------------------------------
 
