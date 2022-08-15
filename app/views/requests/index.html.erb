@@ -1,23 +1,30 @@
 <div>
   <div>
     <h1>
-      List of all requests
+      Service type: Communication Facilitator (CF)
     </h1>
   </div>
 </div>
 
 <hr>
 
+<p>
+A communication facilitator (CF) provides visual information to those unable to see the video screen 
+or receive visual American Sign Language (ASL). A CF is a skilled signer who copies sign language 
+from a caller, as shown on a videophone screen, and provides visual information to a people 
+through close vision or tactile sign language.
+</p>
+
 <div>
   <div>
     <h2>
-      Add a new request
+      Date & Time
     </h2>
 
     <form action="/insert_request" method="post">
       <div>
         <label for="request_date_box">
-          Request date
+          Date of your call
         </label>
 
         <input type="date" id="request_date_box" name="query_request_date">
@@ -25,7 +32,7 @@
 
       <div>
         <label for="request_start_time_box">
-          Request start time
+          Start time
         </label>
 
         <input type="time" id="request_start_time_box" name="query_request_start_time">
@@ -33,15 +40,22 @@
 
       <div>
         <label for="request_end_time_box">
-          Request end time
+          End time
         </label>
 
         <input type="time" id="request_end_time_box" name="query_request_end_time">
       </div>
 
+    <h2>
+      Location
+    </h2>
+      <li>
+        P.O. boxes are not accepted.
+      </li>
+
       <div>
         <label for="request_location_box">
-          Request location
+          Name of the location
         </label>
 
         <input type="text" id="request_location_box" name="query_request_location">
@@ -49,7 +63,7 @@
 
       <div>
         <label for="request_street_address_box">
-          Request street address
+          Street address
         </label>
 
         <input type="text" id="request_street_address_box" name="query_request_street_address">
@@ -57,7 +71,7 @@
 
       <div>
         <label for="request_city_box">
-          Request city
+          City
         </label>
 
         <input type="text" id="request_city_box" name="query_request_city">
@@ -65,7 +79,7 @@
 
       <div>
         <label for="request_state_box">
-          Request state
+          State
         </label>
 
         <input type="text" id="request_state_box" name="query_request_state">
@@ -73,7 +87,7 @@
 
       <div>
         <label for="request_country_box">
-          Request country
+          Country
         </label>
 
         <input type="text" id="request_country_box" name="query_request_country">
@@ -81,7 +95,7 @@
 
       <div>
         <label for="request_postal_code_box">
-          Request postal code
+          Postal code
         </label>
 
         <input type="text" id="request_postal_code_box" name="query_request_postal_code">
@@ -89,7 +103,7 @@
 
       <div>
         <label for="request_parking_location_box">
-          Request parking location
+          Where should your provider park?
         </label>
 
         <input type="text" id="request_parking_location_box" name="query_request_parking_location">
@@ -97,7 +111,7 @@
 
       <div>
         <label for="request_meeting_location_box">
-          Request meeting location
+          Where should your provider meet you?
         </label>
 
         <input type="text" id="request_meeting_location_box" name="query_request_meeting_location">
@@ -106,20 +120,28 @@
       <div>
         <input type="checkbox" id="request_pet_box" name="query_request_pet" value="1">
 
-        <label for="request_pet_box">Request pet</label>
+        <label for="request_pet_box">Have pet?</label>
       </div>
+
+    <h2>
+      Preference
+    </h2>
 
       <div>
         <label for="request_gender_preference_box">
-          Request gender preference
+          Do you have any preference for the gender of your provider?
         </label>
 
         <input type="text" id="request_gender_preference_box" name="query_request_gender_preference">
       </div>
 
+    <h2>
+      Comments
+    </h2>
+
       <div>
         <label for="request_comments_box">
-          Request comments
+          Do you want to share anything with your provider such as which provider do you prefer or not prefer?
         </label>
 
         <input type="text" id="request_comments_box" name="query_request_comments">
@@ -158,9 +180,16 @@
       </div>
 
       <button>
-        Create request
+        Submit
       </button>
     </form>
+
+    <form action="/insert_request" method="post">
+      <button>
+        Cancel
+      </button>
+    </form>
+
   </div>
 </div>
 
