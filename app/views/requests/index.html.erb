@@ -274,16 +274,6 @@ through close vision or tactile sign language.
           Provider
         </th>
 
-        <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
-        </th>
-
-        <th>
-        </th>
       </tr>
 
       <% @list_of_requests.each do |a_request| %>
@@ -357,18 +347,18 @@ through close vision or tactile sign language.
         </td>
 
         <td>
-          <%= a_request.requestor_id %>
+          <%#= a_request.requestor_id %>
+          <%#= a_request.user.user_first_name %>
+          <% requestor = User.where({ :id => a_request.requestor_id }).at(0) %>
+
+          <%= requestor.user_first_name %>
         </td>
 
         <td>
-          <%= a_request.provider_id %>
-        </td>
+          <%#= a_request.provider_id %>
+           <% provider = User.where({ :id => a_request.provider_id }).at(0) %>
 
-        <td>
-          <%= time_ago_in_words(a_request.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(a_request.updated_at) %> ago
+          <%= provider.user_first_name %>
         </td>
 
         <td>
