@@ -1,0 +1,207 @@
+<li>
+  <a href="/view_requests">View a new request</a>
+</li>
+
+<div>
+  <div>
+    <h1>
+      Accept a Communication Facilitator (CF) request
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<p>
+A communication facilitator (CF) provides visual information to those unable to see the video screen 
+or receive visual American Sign Language (ASL). A CF is a skilled signer who copies sign language 
+from a caller, as shown on a videophone screen, and provides visual information to a people 
+through close vision or tactile sign language.
+</p>
+    
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Request date
+        </th>
+
+        <th>
+          Request start time
+        </th>
+
+        <th>
+          Request end time
+        </th>
+
+        <th>
+          Request location
+        </th>
+
+        <th>
+          Request street address
+        </th>
+
+        <th>
+          Request city
+        </th>
+
+        <th>
+          Request state
+        </th>
+
+        <th>
+          Request country
+        </th>
+
+        <th>
+          Request postal code
+        </th>
+
+        <th>
+          Request parking location
+        </th>
+
+        <th>
+          Request meeting location
+        </th>
+
+        <th>
+          Request pet
+        </th>
+
+        <th>
+          Request gender preference
+        </th>
+
+        <th>
+          Request comments
+        </th>
+
+        <th>
+          Request amount
+        </th>
+
+        <th>
+          Request status
+        </th>
+
+        <th>
+          Requestor
+        </th>
+
+        <th>
+          Provider
+        </th>
+
+      </tr>
+
+      <% @list_of_requests.each do |a_request| %>
+      <tr>
+        <td>
+          <%= a_request.id %>
+        </td>
+
+        <td>
+          <%= a_request.request_date %>
+        </td>
+
+        <td>
+          <%= a_request.request_start_time %>
+        </td>
+
+        <td>
+          <%= a_request.request_end_time %>
+        </td>
+
+        <td>
+          <%= a_request.request_location %>
+        </td>
+
+        <td>
+          <%= a_request.request_street_address %>
+        </td>
+
+        <td>
+          <%= a_request.request_city %>
+        </td>
+
+        <td>
+          <%= a_request.request_state %>
+        </td>
+
+        <td>
+          <%= a_request.request_country %>
+        </td>
+
+        <td>
+          <%= a_request.request_postal_code %>
+        </td>
+
+        <td>
+          <%= a_request.request_parking_location %>
+        </td>
+
+        <td>
+          <%= a_request.request_meeting_location %>
+        </td>
+
+        <td>
+          <%= a_request.request_pet %>
+        </td>
+
+        <td>
+          <%= a_request.request_gender_preference %>
+        </td>
+
+        <td>
+          <%= a_request.request_comments %>
+        </td>
+
+        <td>
+          <%= a_request.request_amount.to_s(:currency) %>
+        </td>
+
+        <td>
+          <%= a_request.request_status %>
+        </td>
+
+        <td>
+          <%#= a_request.requestor_id %>
+          <%= a_request.requestor.user_first_name %>
+          <%# requestor = User.where({ :id => a_request.requestor_id }).at(0) %>
+
+          <%#= requestor.user_first_name %>
+        </td>
+
+        <td>
+          <%#= a_request.provider_id %>
+          <% if a_request.request_status == "Pending" %>
+
+          <% else %>
+           <%= a_request.provider.user_first_name %>
+
+           <% end %>
+           <%# provider = User.where({ :id => a_request.provider_id }).at(0) %>
+
+          <%#= provider.user_first_name %>
+        </td>
+
+        <td>
+          <a href="/requests/<%= a_request.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

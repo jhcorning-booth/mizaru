@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get("/", { :controller => "user_authentication", :action => "sign_in_form" })
 
-  # Routes for the Request resource:
+  # Routes for the Request (client) resource:
 
   # CREATE
   post("/insert_request", { :controller => "requests", :action => "create" })
@@ -20,6 +20,17 @@ Rails.application.routes.draw do
   get("/delete_request/:path_id", { :controller => "requests", :action => "destroy" })
 
   #------------------------------
+  # Routes for the View Request (provider) resource:
+
+  # READ
+  get("/view_requests", { :controller => "provider", :action => "index" })
+
+  get("/view_requests/:path_id", { :controller => "requests", :action => "show" })
+
+  post("/modify_request/:path_id", { :controller => "requests", :action => "update" })
+
+
+   #------------------------------
 
   # Routes for the User account:
 

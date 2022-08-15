@@ -4,6 +4,7 @@ class UserAuthenticationController < ApplicationController
 
   def sign_in_form
     render({ :template => "user_authentication/sign_in.html.erb" })
+    #render({ :template => "requests/index.html.erb" })
   end
 
   def create_cookie
