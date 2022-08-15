@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get("/", { :controller => "requests", :action => "index" })
+  get("/", { :controller => "user_authentication", :action => "sign_in_form" })
 
   # Routes for the Request resource:
 

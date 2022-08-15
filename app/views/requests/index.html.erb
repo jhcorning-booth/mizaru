@@ -164,11 +164,8 @@ through close vision or tactile sign language.
       </div>
 
       <div>
-        <label for="requestor_id_box">
-          Requestor
-        </label>
 
-        <input type="text" id="requestor_id_box" name="query_requestor_id">
+        <input type="hidden" id="requestor_id_box" name="query_requestor_id" value="<%= session.fetch(:user_id) %>">
       </div>
 
       <div>
@@ -339,7 +336,7 @@ through close vision or tactile sign language.
         </td>
 
         <td>
-          <%= a_request.request_amount %>
+          <%= a_request.request_amount.to_s(:currency) %>
         </td>
 
         <td>
@@ -348,17 +345,23 @@ through close vision or tactile sign language.
 
         <td>
           <%#= a_request.requestor_id %>
-          <%#= a_request.user.user_first_name %>
-          <% requestor = User.where({ :id => a_request.requestor_id }).at(0) %>
+          <%= a_request.requestor.user_first_name %>
+          <%# requestor = User.where({ :id => a_request.requestor_id }).at(0) %>
 
-          <%= requestor.user_first_name %>
+          <%#= requestor.user_first_name %>
         </td>
 
         <td>
           <%#= a_request.provider_id %>
-           <% provider = User.where({ :id => a_request.provider_id }).at(0) %>
+          <% if a_request.request_status == "Pending" %>
 
-          <%= provider.user_first_name %>
+          <% else %>
+           <%= a_request.provider.user_first_name %>
+
+           <% end %>
+           <%# provider = User.where({ :id => a_request.provider_id }).at(0) %>
+
+          <%#= provider.user_first_name %>
         </td>
 
         <td>

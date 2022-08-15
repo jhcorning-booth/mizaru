@@ -27,6 +27,6 @@
 class Request < ApplicationRecord
 
   belongs_to(:requestor, { :required => true, :class_name => "User", :foreign_key => "requestor_id" })
-  belongs_to(:provider, { :required => true, :class_name => "User", :foreign_key => "provider_id" })
+  belongs_to(:provider, { :required => false, :class_name => "User", :foreign_key => "provider_id" })
   
 end
