@@ -10,12 +10,6 @@
           Go back
         </a>
       </div>
-
-      <div>
-        <a href="/delete_request/<%= @the_request.id %>">
-          Delete request
-        </a>
-      </div>
     </div>
 
     <dl>
@@ -168,20 +162,16 @@
 <div>
   <div>
     <h2>
-      Accept a request
+      Click I accept button below to accept this request. 
     </h2>
 
     <form action="/accept_request/<%= @the_request.id %>"  method="post" >
 
       <div>
-        <label for="provider_id_box">
-          Provider
-        </label>
-
         <input type="hidden" id="provider_id_box" name="query_provider_id" value="<%= session.fetch ( :user_id) %>">
       </div>
 
-      <button>
+      <button  class="btn btn-success">
         I accept
       </button>
     </form>
