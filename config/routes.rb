@@ -25,9 +25,9 @@ Rails.application.routes.draw do
   # READ
   get("/view_requests", { :controller => "provider", :action => "index" })
 
-  get("/view_requests/:path_id", { :controller => "requests", :action => "show" })
+  get("/view_requests/:path_id", { :controller => "provider", :action => "show" })
 
-  post("/modify_request/:path_id", { :controller => "requests", :action => "update" })
+  post("/accept_request/:path_id", { :controller => "provider", :action => "update" })
 
 
    #------------------------------

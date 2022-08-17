@@ -1,6 +1,6 @@
 class RequestsController < ApplicationController
   def index
-    matching_requests = Request.all
+    matching_requests = Request.all #Request.where({ :status == "Pending" => })
 
     @list_of_requests = matching_requests.order({ :created_at => :desc })
 

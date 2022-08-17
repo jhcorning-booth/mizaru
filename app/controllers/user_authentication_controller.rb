@@ -20,7 +20,12 @@ class UserAuthenticationController < ApplicationController
       else
         session[:user_id] = user.id
       
+        if user.user_type == "Client"
         redirect_to("/", { :notice => "Signed in successfully." })
+        else 
+        redirect_to("/view_requests", { :notice => "Signed in successfully." })
+        end 
+
       end
     else
       redirect_to("/user_sign_in", { :alert => "No user with that email address." })

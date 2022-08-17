@@ -1,0 +1,191 @@
+<div>
+  <div>
+    <h1>
+      Request #<%= @the_request.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/view_requests">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_request/<%= @the_request.id %>">
+          Delete request
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Request date
+      </dt>
+      <dd>
+        <%= @the_request.request_date %>
+      </dd>
+
+      <dt>
+        Request start time
+      </dt>
+      <dd>
+        <%= @the_request.request_start_time %>
+      </dd>
+
+      <dt>
+        Request end time
+      </dt>
+      <dd>
+        <%= @the_request.request_end_time %>
+      </dd>
+
+      <dt>
+        Request location
+      </dt>
+      <dd>
+        <%= @the_request.request_location %>
+      </dd>
+
+      <dt>
+        Request street address
+      </dt>
+      <dd>
+        <%= @the_request.request_street_address %>
+      </dd>
+
+      <dt>
+        Request city
+      </dt>
+      <dd>
+        <%= @the_request.request_city %>
+      </dd>
+
+      <dt>
+        Request state
+      </dt>
+      <dd>
+        <%= @the_request.request_state %>
+      </dd>
+
+      <dt>
+        Request country
+      </dt>
+      <dd>
+        <%= @the_request.request_country %>
+      </dd>
+
+      <dt>
+        Request postal code
+      </dt>
+      <dd>
+        <%= @the_request.request_postal_code %>
+      </dd>
+
+      <dt>
+        Request parking location
+      </dt>
+      <dd>
+        <%= @the_request.request_parking_location %>
+      </dd>
+
+      <dt>
+        Request meeting location
+      </dt>
+      <dd>
+        <%= @the_request.request_meeting_location %>
+      </dd>
+
+      <dt>
+        Request pet
+      </dt>
+      <dd>
+        <%= @the_request.request_pet %>
+      </dd>
+
+      <dt>
+        Request gender preference
+      </dt>
+      <dd>
+        <%= @the_request.request_gender_preference %>
+      </dd>
+
+      <dt>
+        Request comments
+      </dt>
+      <dd>
+        <%= @the_request.request_comments %>
+      </dd>
+
+      <dt>
+        Request amount
+      </dt>
+      <dd>
+        <%= @the_request.request_amount %>
+      </dd>
+
+      <dt>
+        Request status
+      </dt>
+      <dd>
+        <%= @the_request.request_status %>
+      </dd>
+
+      <dt>
+        Requestor
+      </dt>
+      <dd>
+        <%= @the_request.requestor_id %>
+      </dd>
+
+      <dt>
+        Provider
+      </dt>
+      <dd>
+        <%= @the_request.provider_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_request.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_request.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Accept a request
+    </h2>
+
+    <form action="/accept_request/<%= @the_request.id %>"  method="post" >
+
+      <div>
+        <label for="provider_id_box">
+          Provider
+        </label>
+
+        <input type="hidden" id="provider_id_box" name="query_provider_id" value="<%= session.fetch ( :user_id) %>">
+      </div>
+
+      <button>
+        I accept
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
