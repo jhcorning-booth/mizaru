@@ -21,7 +21,7 @@ class UserAuthenticationController < ApplicationController
         session[:user_id] = user.id
       
         if user.user_type == "Client"
-        redirect_to("/", { :notice => "Signed in successfully." })
+        redirect_to("/requests", { :notice => "Signed in successfully." })
         else 
         redirect_to("/view_requests", { :notice => "Signed in successfully." })
         end 
@@ -48,7 +48,7 @@ class UserAuthenticationController < ApplicationController
     @user.password = params.fetch("query_password")
     @user.password_confirmation = params.fetch("query_password_confirmation")
     @user.user_type = params.fetch("query_user_type")
-    @user.user_profile_picture = params.fetch("query_user_profile_picture")
+    #@user.user_profile_picture = params.fetch("query_user_profile_picture")
     @user.user_first_name = params.fetch("query_user_first_name")
     @user.user_last_name = params.fetch("query_user_last_name")
     @user.user_street_address = params.fetch("query_user_street_address")
@@ -56,7 +56,7 @@ class UserAuthenticationController < ApplicationController
     @user.user_state = params.fetch("query_user_state")
     @user.user_country = params.fetch("query_user_country")
     @user.user_postal_code = params.fetch("query_user_postal_code")
-    @user.user_race = params.fetch("query_user_race")
+    #@user.user_race = params.fetch("query_user_race")
     @user.user_comments = params.fetch("query_user_comments")
 
     save_status = @user.save
@@ -80,7 +80,7 @@ class UserAuthenticationController < ApplicationController
     @user.password = params.fetch("query_password")
     @user.password_confirmation = params.fetch("query_password_confirmation")
     @user.user_type = params.fetch("query_user_type")
-    @user.user_profile_picture = params.fetch("query_user_profile_picture")
+    #@user.user_profile_picture = params.fetch("query_user_profile_picture")
     @user.user_first_name = params.fetch("query_user_first_name")
     @user.user_last_name = params.fetch("query_user_last_name")
     @user.user_street_address = params.fetch("query_user_street_address")
@@ -88,7 +88,7 @@ class UserAuthenticationController < ApplicationController
     @user.user_state = params.fetch("query_user_state")
     @user.user_country = params.fetch("query_user_country")
     @user.user_postal_code = params.fetch("query_user_postal_code")
-    @user.user_race = params.fetch("query_user_race")
+    #@user.user_race = params.fetch("query_user_race")
     @user.user_comments = params.fetch("query_user_comments")
     
     if @user.valid?

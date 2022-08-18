@@ -12,6 +12,8 @@
       </div>
     </div>
 
+    <hr>
+
     <dl>
       <dt>
         Request date
@@ -21,105 +23,105 @@
       </dd>
 
       <dt>
-        Request start time
+        Start time
       </dt>
       <dd>
         <%= @the_request.request_start_time %>
       </dd>
 
       <dt>
-        Request end time
+        End time
       </dt>
       <dd>
         <%= @the_request.request_end_time %>
       </dd>
 
       <dt>
-        Request location
+        Location
       </dt>
       <dd>
         <%= @the_request.request_location %>
       </dd>
 
       <dt>
-        Request street address
+        Street address
       </dt>
       <dd>
         <%= @the_request.request_street_address %>
       </dd>
 
       <dt>
-        Request city
+        City
       </dt>
       <dd>
         <%= @the_request.request_city %>
       </dd>
 
       <dt>
-        Request state
+        State
       </dt>
       <dd>
         <%= @the_request.request_state %>
       </dd>
 
       <dt>
-        Request country
+        Country
       </dt>
       <dd>
         <%= @the_request.request_country %>
       </dd>
 
       <dt>
-        Request postal code
+        Postal code
       </dt>
       <dd>
         <%= @the_request.request_postal_code %>
       </dd>
 
       <dt>
-        Request parking location
+        Parking location
       </dt>
       <dd>
         <%= @the_request.request_parking_location %>
       </dd>
 
       <dt>
-        Request meeting location
+        Meeting location
       </dt>
       <dd>
         <%= @the_request.request_meeting_location %>
       </dd>
 
       <dt>
-        Request pet
+        Does requestor have a pet?
       </dt>
       <dd>
         <%= @the_request.request_pet %>
       </dd>
 
       <dt>
-        Request gender preference
+        Gender preference
       </dt>
       <dd>
         <%= @the_request.request_gender_preference %>
       </dd>
 
       <dt>
-        Request comments
+        Requestor's comments
       </dt>
       <dd>
         <%= @the_request.request_comments %>
       </dd>
 
       <dt>
-        Request amount
+        Expected earning
       </dt>
       <dd>
         <%= @the_request.request_amount %>
       </dd>
 
       <dt>
-        Request status
+        Status
       </dt>
       <dd>
         <%= @the_request.request_status %>
@@ -129,14 +131,16 @@
         Requestor
       </dt>
       <dd>
-        <%= @the_request.requestor_id %>
+        <%#= @the_request.requestor_id %>
+        <%= @the_request.requestor.user_first_name %>
       </dd>
 
       <dt>
         Provider
       </dt>
       <dd>
-        <%= @the_request.provider_id %>
+        <%#= @the_request.provider_id %>
+         <%= @the_request.provider.user_first_name %>
       </dd>
 
       <dt>
@@ -161,9 +165,9 @@
 
 <div>
   <div>
-    <h2>
+    <h5>
       Click I accept button below to accept this request. 
-    </h2>
+    </h5>
 
     <form action="/accept_request/<%= @the_request.id %>"  method="post" >
 
@@ -171,7 +175,7 @@
         <input type="hidden" id="provider_id_box" name="query_provider_id" value="<%= session.fetch ( :user_id) %>">
       </div>
 
-      <button  class="btn btn-success">
+      <button  class="btn btn-primary">
         I accept
       </button>
     </form>

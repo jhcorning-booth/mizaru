@@ -1,20 +1,24 @@
 <div>
   <div>
     <h1>
-      Request #<%= @the_request.id %> details
+      My request details (Request ID: <%= @the_request.id %>)
     </h1>
 
     <div>
       <div>
+        <p>
         <a href="/requests">
           Go back
         </a>
+        </p>
       </div>
 
       <div>
+        <p>
         <a href="/delete_request/<%= @the_request.id %>">
           Delete request
         </a>
+        </p>
       </div>
     </div>
 
@@ -168,7 +172,7 @@
 <div>
   <div>
     <h2>
-      Edit request
+      Update my request
     </h2>
 
     <form action="/modify_request/<%= @the_request.id %>"  method="post" >
@@ -182,7 +186,7 @@
 
       <div>
         <label for="request_start_time_box">
-          Request start time
+          Start time
         </label>
 
         <input type="time" id="request_start_time_box" name="query_request_start_time" value="<%= @the_request.request_start_time %>">
@@ -190,7 +194,7 @@
 
       <div>
         <label for="request_end_time_box">
-          Request end time
+          End time
         </label>
 
         <input type="time" id="request_end_time_box" name="query_request_end_time" value="<%= @the_request.request_end_time %>">
@@ -198,7 +202,7 @@
 
       <div>
         <label for="request_location_box">
-          Request location
+          Location
         </label>
 
         <input type="text" id="request_location_box" name="query_request_location" value="<%= @the_request.request_location %>">
@@ -206,7 +210,7 @@
 
       <div>
         <label for="request_street_address_box">
-          Request street address
+          Street address
         </label>
 
         <input type="text" id="request_street_address_box" name="query_request_street_address" value="<%= @the_request.request_street_address %>">
@@ -214,7 +218,7 @@
 
       <div>
         <label for="request_city_box">
-          Request city
+          City
         </label>
 
         <input type="text" id="request_city_box" name="query_request_city" value="<%= @the_request.request_city %>">
@@ -222,7 +226,7 @@
 
       <div>
         <label for="request_state_box">
-          Request state
+          State
         </label>
 
         <input type="text" id="request_state_box" name="query_request_state" value="<%= @the_request.request_state %>">
@@ -230,7 +234,7 @@
 
       <div>
         <label for="request_country_box">
-          Request country
+          Country
         </label>
 
         <input type="text" id="request_country_box" name="query_request_country" value="<%= @the_request.request_country %>">
@@ -238,7 +242,7 @@
 
       <div>
         <label for="request_postal_code_box">
-          Request postal code
+          Postal code
         </label>
 
         <input type="text" id="request_postal_code_box" name="query_request_postal_code" value="<%= @the_request.request_postal_code %>">
@@ -246,7 +250,7 @@
 
       <div>
         <label for="request_parking_location_box">
-          Request parking location
+          Parking location
         </label>
 
         <input type="text" id="request_parking_location_box" name="query_request_parking_location" value="<%= @the_request.request_parking_location %>">
@@ -254,7 +258,7 @@
 
       <div>
         <label for="request_meeting_location_box">
-          Request meeting location
+          Meeting location
         </label>
 
         <input type="text" id="request_meeting_location_box" name="query_request_meeting_location" value="<%= @the_request.request_meeting_location %>">
@@ -264,13 +268,13 @@
         <input type="checkbox" id="request_pet_box" name="query_request_pet" value="1" <%= "checked" if @the_request.request_pet %>>
 
         <label for="request_pet_box">
-            Request pet
+            Does client has a pet?
         </label>
       </div>
 
       <div>
         <label for="request_gender_preference_box">
-          Request gender preference
+          Gender preference
         </label>
 
         <input type="text" id="request_gender_preference_box" name="query_request_gender_preference" value="<%= @the_request.request_gender_preference %>">
@@ -278,7 +282,7 @@
 
       <div>
         <label for="request_comments_box">
-          Request comments
+          My comments
         </label>
 
         <input type="text" id="request_comments_box" name="query_request_comments" value="<%= @the_request.request_comments %>">
@@ -286,12 +290,13 @@
 
       <div>
         <label for="request_amount_box">
-          Request amount
+          Request payment
         </label>
 
         <input type="text" id="request_amount_box" name="query_request_amount" value="<%= @the_request.request_amount %>">
       </div>
 
+      <!--
       <div>
         <label for="request_status_box">
           Request status
@@ -312,13 +317,17 @@
         <label for="provider_id_box">
           Provider
         </label>
+        
 
         <input type="text" id="provider_id_box" name="query_provider_id" value="<%= @the_request.provider_id %>">
       </div>
+      -->
 
-      <button  class="btn btn-success">
-        Update request
+      
+      <button  class="btn btn-primary">
+        Update my request
       </button>
+      
     </form>
   </div>
 </div>
