@@ -34,14 +34,14 @@
         Start time
       </dt>
       <dd>
-        <%= @the_request.request_start_time %>
+        <%= @the_request.request_start_time.strftime("%R %p") %>
       </dd>
 
       <dt>
         End time
       </dt>
       <dd>
-        <%= @the_request.request_end_time %>
+        <%= @the_request.request_end_time.strftime("%R %p") %>
       </dd>
 
       <dt>

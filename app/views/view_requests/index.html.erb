@@ -87,11 +87,11 @@ through close vision or tactile sign language.
         </td>
 
         <td>
-          <%= a_request.request_start_time %>
+          <%= a_request.request_start_time.strftime("%R %p") %>
         </td>
 
         <td>
-          <%= a_request.request_end_time %>
+          <%= a_request.request_end_time.strftime("%R %p") %>
         </td>
 
         <td>
