@@ -182,16 +182,11 @@ through close vision or tactile sign language.
       <button class="btn btn-primary" >
         Submit
       </button>
+
+      <input type="reset" class="btn btn-secondary" value="Cancel">
+
     </form>
       </p>
-
-    <p>
-    <form action="/insert_request" method="post">
-      <button class="btn btn-secondary">
-        Cancel
-      </button>
-    </form>
-    </p>
 
   </div>
 </div>
@@ -262,7 +257,12 @@ through close vision or tactile sign language.
         </td>
 
         <td>
-          <%= a_request.request_start_time %>
+          <% if a_request.request_start_time == nil %>
+
+          <% else %>
+          <%= a_request.request_start_time.strftime("%R %p") %>
+
+          <% end %>
         </td>
 
         <td>
@@ -290,7 +290,14 @@ through close vision or tactile sign language.
         </td>
 
         <td>
+          <% if a_request.request_status == "Accepted" %>
+          <strong><%= a_request.request_status %></strong>
+
+          <% else %>
           <%= a_request.request_status %>
+
+          <% end %>
+
         </td>
 
         <td>

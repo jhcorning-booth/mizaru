@@ -31,105 +31,105 @@
       </dd>
 
       <dt>
-        Request start time
+        Start time
       </dt>
       <dd>
         <%= @the_request.request_start_time %>
       </dd>
 
       <dt>
-        Request end time
+        End time
       </dt>
       <dd>
         <%= @the_request.request_end_time %>
       </dd>
 
       <dt>
-        Request location
+        Location
       </dt>
       <dd>
         <%= @the_request.request_location %>
       </dd>
 
       <dt>
-        Request street address
+        Street address
       </dt>
       <dd>
         <%= @the_request.request_street_address %>
       </dd>
 
       <dt>
-        Request city
+        City
       </dt>
       <dd>
         <%= @the_request.request_city %>
       </dd>
 
       <dt>
-        Request state
+        State
       </dt>
       <dd>
         <%= @the_request.request_state %>
       </dd>
 
       <dt>
-        Request country
+        Country
       </dt>
       <dd>
         <%= @the_request.request_country %>
       </dd>
 
       <dt>
-        Request postal code
+        Postal code
       </dt>
       <dd>
         <%= @the_request.request_postal_code %>
       </dd>
 
       <dt>
-        Request parking location
+        Parking location
       </dt>
       <dd>
         <%= @the_request.request_parking_location %>
       </dd>
 
       <dt>
-        Request meeting location
+        Meeting location
       </dt>
       <dd>
         <%= @the_request.request_meeting_location %>
       </dd>
 
       <dt>
-        Request pet
+        Does client have a pet?
       </dt>
       <dd>
         <%= @the_request.request_pet %>
       </dd>
 
       <dt>
-        Request gender preference
+        Gender preference
       </dt>
       <dd>
         <%= @the_request.request_gender_preference %>
       </dd>
 
       <dt>
-        Request comments
+        Requestor's comments
       </dt>
       <dd>
         <%= @the_request.request_comments %>
       </dd>
 
       <dt>
-        Request amount
+        Request payment
       </dt>
       <dd>
         <%= @the_request.request_amount %>
       </dd>
 
       <dt>
-        Request status
+        Status
       </dt>
       <dd>
         <%= @the_request.request_status %>
@@ -149,7 +149,7 @@
       <dd>
         <% if @the_request.request_status == "Pending" %>
         <%#= @the_request.provider_id %>
-
+        No provider yet
         <% else %>
         <%= @the_request.provider.user_first_name %>
 

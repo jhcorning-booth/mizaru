@@ -140,7 +140,13 @@
       </dt>
       <dd>
         <%#= @the_request.provider_id %>
+        <% if @the_request.provider_id == nil %>
+        No provider yet
+
+        <% else %>
          <%= @the_request.provider.user_first_name %>
+
+        <% end %>
       </dd>
 
       <dt>
@@ -162,7 +168,7 @@
 
 <hr>
 
-
+<% if @the_request.request_status != "Accepted" %>
 <div>
   <div>
     <h5>
@@ -174,12 +180,12 @@
       <div>
         <input type="hidden" id="provider_id_box" name="query_provider_id" value="<%= session.fetch ( :user_id) %>">
       </div>
-
       <button  class="btn btn-primary">
         I accept
       </button>
+      <% end %>
+
     </form>
   </div>
 </div>
 
-<hr>

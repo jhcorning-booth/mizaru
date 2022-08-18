@@ -65,9 +65,9 @@ class RequestsController < ApplicationController
     the_request.request_gender_preference = params.fetch("query_request_gender_preference")
     the_request.request_comments = params.fetch("query_request_comments")
     the_request.request_amount = params.fetch("query_request_amount")
-    the_request.request_status = params.fetch("query_request_status")
-    the_request.requestor_id = params.fetch("query_requestor_id")
-    the_request.provider_id = params.fetch("query_provider_id")
+    #the_request.request_status = params.fetch("query_request_status")
+    #the_request.requestor_id = params.fetch("query_requestor_id")
+    #the_request.provider_id = params.fetch("query_provider_id")
 
     if the_request.valid?
       the_request.save
