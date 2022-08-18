@@ -139,14 +139,21 @@
         Requestor
       </dt>
       <dd>
-        <%= @the_request.requestor_id %>
+        <%#= @the_request.requestor_id %>
+        <%= @the_request.requestor.user_first_name %>
       </dd>
 
       <dt>
         Provider
       </dt>
       <dd>
-        <%= @the_request.provider_id %>
+        <% if @the_request.request_status == "Pending" %>
+        <%#= @the_request.provider_id %>
+
+        <% else %>
+        <%= @the_request.provider.user_first_name %>
+
+        <% end %>
       </dd>
 
       <dt>
